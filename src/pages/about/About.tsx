@@ -28,22 +28,16 @@ export default function About() {
           myself.
         </p>
 
-        <p>
+        <p className='about-quote'>
           Creativity is my dialogue with the world. I like to add value to trash.
         </p>
       </div>
 
       {/* Фото */}
-      <div style={{ flex: "1 1 300px", maxWidth: "400px" }}>
+      <div className='about-image'>
         <img
           src={imgUrl}
           alt="картинка About"
-          style={{
-            width: "100%",
-            height: "auto",
-            borderRadius: "2px",
-            objectFit: "cover",
-          }}
         />
       </div>
     </section>
