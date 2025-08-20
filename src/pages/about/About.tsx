@@ -1,4 +1,5 @@
-import imgUrl from '../../img/MIT05023.jpg'
+import imgUrl from '../../img/MIT05023.jpg';
+import "./About.css";
 export default function About() {
   return (<>
   <section className="about">

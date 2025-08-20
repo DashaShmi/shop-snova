@@ -5,6 +5,7 @@ import Product from "./pages/Product"
 import Cart from "./pages/Cart"
 import About from "./pages/about/About"
 import Navbar from "./pages/components/Navbar"
+import Contacts from "./pages/contacts/Contacts"
 import { useState } from 'react'
 import './App.css'
 
@@ -20,7 +21,8 @@ function App() {
         <Route path="/shop" element={<Shop />} />
         <Route path="/shop/:id" element={<Product />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/contact" element={<About />} />
+        <Route path="/contact" element={<Contacts />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </BrowserRouter>
     </>
