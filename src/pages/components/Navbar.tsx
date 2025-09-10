@@ -10,19 +10,20 @@ export default function Navbar() {
     //   <Link to="/contact">About</Link>
     // </nav>
 
-       <header className="navbar">
+    <header className="navbar">
       <div className="nav-left">
-        <Link to="/shop" className="nav-link">Shop</Link>
+        <Link to="/" className="nav-link">SNOVA</Link>
       </div>
-
+      {/* 
       <div className="nav-center">
         <Link to="/" className="nav-logo">SNOVA</Link>
-      </div>
+      </div> */}
 
       <div className="nav-right">
+        <Link to="/shop" className="nav-link">Shop</Link>
         <Link to="/about" className="nav-link">About</Link>
         <Link to="/contact" className="nav-link">Contacts</Link>
-        <Link to="/cart" className="nav-icon">🗑</Link>
+        <Link to="/cart" className="nav-icon">🛒</Link>
       </div>
     </header>
   );
