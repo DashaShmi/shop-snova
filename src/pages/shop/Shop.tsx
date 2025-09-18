@@ -25,6 +25,7 @@ export const categories = [
   },
 ];
 
+
 export default function Shop() {
 
   return (<>

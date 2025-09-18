@@ -1,6 +1,7 @@
 import styles from "./Category.module.scss";
 import imgUrl from '../../img/wallets.jpg';
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { categories } from "../shop/Shop"
 
 export const wallets = [
   {
@@ -25,12 +26,25 @@ export const wallets = [
   },
 ];
 
+type CategoryParams = {
+  categoryId: string;
+};
 
 
 export default function Wallets() {
-  // const arr = new Array(5).fill(0);
+
+
+  const { categoryId } = useParams<CategoryParams>();
+
+  const category = categories.find(elem => {
+    if (elem.id == categoryId) {
+      return true;
+    }
+  })
+
   return (<>
-    <h2 className={styles.categoryTitle}>Wallets</h2>
+    <h2 className={styles.categoryTitle}>{category?.name}</h2>
+    <p className={styles.categoryTitle}>{category?.description}</p>
     <section className={styles.category}>
 
       {wallets.map((wallet) =>
