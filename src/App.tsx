@@ -19,16 +19,20 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/shop" element={<Shop />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/contact" element={<Contacts />} />
           <Route path="/about" element={<About />} />
-          <Route path="/shop/wallets" element={<Categoriy />} />
-          <Route path="/shop/wallets/fakeWallet" element={<ProductPage />} />
+
+          <Route path="/shop">
+            <Route index element={<Shop />} />
+            <Route path="bags" element={<Categoriy />} />
+            <Route path="wallets" element={<Categoriy />} />
+            <Route path="passport-covers" element={<Categoriy />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </>
   )
 }
 
-export default App
+export default App 
