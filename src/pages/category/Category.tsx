@@ -33,7 +33,6 @@ type CategoryParams = {
 
 export default function Wallets() {
 
-
   const { categoryId } = useParams<CategoryParams>();
 
   const category = categories.find(elem => {
@@ -49,13 +48,13 @@ export default function Wallets() {
 
       {wallets.map((wallet) =>
       (<div>
-        <Link to="/shop/wallets/fakeWallet" className="nav-link">
+        <Link to="/shop/product/fakeWallet" className="nav-link">
           <div className={styles.card}>
             <img
               src={wallet.img}
               alt="картинка Wallets" />
           </div>
-          <h3 className={styles.prpductTitle}>{wallet.name}</h3>
+          <h3 className={styles.prpductTitle}>{wallet.name} Жопа</h3>
           <p className={styles.productDescription}>{wallet.description}</p>
           <p className={styles.productPrice}>{wallet.price}</p>
         </Link>

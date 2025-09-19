@@ -33,8 +33,7 @@ export default function Shop() {
 
       {categories.map((category) =>
       (<div className="card">
-        <Link to={`/shop/${category.id}`} className="nav-link">
-
+        <Link to={`/shop/category/${category.id}`} className="nav-link">
           <img
             src={category.img}
             alt="картинка Shop" />

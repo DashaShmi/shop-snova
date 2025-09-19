@@ -9,6 +9,13 @@ import Categoriy from "./pages/category/Category"
 import ProductPage from "./pages/productPage/ProductPage"
 import './App.css'
 
+// категории
+// shop/categories/wallets/
+
+// продукты
+// shop/products/fakewallet/
+
+
 function App() {
 
   return (
@@ -21,9 +28,11 @@ function App() {
           <Route path="/contact" element={<Contacts />} />
           <Route path="/about" element={<About />} />
 
+
           <Route path="/shop">
             <Route index element={<Shop />} />
-            <Route path=":categoryId" element={<Categoriy />} />
+            <Route path="category/:categoryId" element={<Categoriy />} />
+            <Route path="/shop/product/fakeWallet" element={<ProductPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
