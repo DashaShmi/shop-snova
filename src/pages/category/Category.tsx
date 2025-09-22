@@ -1,43 +1,8 @@
 import styles from "./Category.module.scss";
 import imgUrl from '../../img/wallets.jpg';
 import { Link, useParams } from "react-router-dom";
-import { categories } from "../shop/Shop"
-
-export const products = [
-  {
-    name: "Bifold Wallet",
-    price: 140,
-    description: 'Bifold wallet from plastic bags',
-    img: 'https://optim.tildacdn.pub/tild3333-3035-4331-b638-323663313935/-/format/webp/MIT04573.jpg.webp',
-    category: "wallet",
-    id: "bifold-wallet"
-  },
-  {
-    name: "Zippered wallet",
-    price: 100,
-    description: 'For cards, coins and bills',
-    img: 'https://optim.tildacdn.pub/tild6165-3136-4261-b764-343137636364/-/format/webp/MIT04678.JPG.webp',
-    category: "wallet",
-    id: "zippered-wallet"
-  },
-  {
-    name: "Cardholder",
-    price: 80,
-    description: 'Cardholder from plastic bags',
-    img: 'https://optim.tildacdn.pub/tild3931-3437-4965-b136-323164363731/-/format/webp/MIT04888.jpg.webp',
-    category: "wallet",
-    id: "cardholder"
-  },
-
-  {
-    name: "Docholder",
-    price: 140,
-    description: 'Bifold wallet from plastic bags',
-    img: 'https://optim.tildacdn.pub/tild3531-3430-4336-a237-666565393236/-/format/webp/MIT04497.jpg.webp',
-    category: "passport-covers",
-    id: "docholder"
-  }
-];
+import { ALL_CATEGORIES } from "../shop/ALL_CATEGORIES";
+import { ALL_PRODUCTS } from "./ALL_PRODUCTS";
 
 type CategoryParams = {
   categoryId: string;
@@ -48,8 +13,14 @@ export default function Wallets() {
 
   const { categoryId } = useParams<CategoryParams>();
 
-  const category = categories.find(elem => {
+  const category = ALL_CATEGORIES.find(elem => {
     if (elem.id == categoryId) {
+      return true;
+    }
+  });
+
+  const productInCategory = ALL_PRODUCTS.filter(elem => {
+    if (elem.category == categoryId) {
       return true;
     }
   })
@@ -59,7 +30,7 @@ export default function Wallets() {
     <p className={styles.categoryTitle}>{category?.description}</p>
     <section className={styles.category}>
 
-      {products.map((product) =>
+      {productInCategory.map((product) =>
       (<div>
         <Link to={`/shop/product/${product.id}`} className="nav-link">
           <div className={styles.card}>

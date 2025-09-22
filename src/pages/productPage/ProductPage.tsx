@@ -1,7 +1,7 @@
 import styles from "./ProductPage.module.scss";
 import imgUrl from '../../img/wallets.jpg';
 import { useParams } from "react-router-dom";
-import { products } from "../category/Category";
+import { ALL_PRODUCTS } from "../category/ALL_PRODUCTS";
 
 type ProductParams = {
   productId: string;
@@ -11,15 +11,11 @@ export default function ProductPage() {
 
   const { productId } = useParams<ProductParams>();
 
-  console.log("productId ", productId);
-
-  const product = products.find(elem => {
+  const product = ALL_PRODUCTS.find(elem => {
     if (elem.id == productId) {
       return true;
     }
   })
-
-  console.log("product ", product);
 
   return (<>
     <h2> Fake Product Page</h2>
