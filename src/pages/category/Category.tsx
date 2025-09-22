@@ -3,27 +3,40 @@ import imgUrl from '../../img/wallets.jpg';
 import { Link, useParams } from "react-router-dom";
 import { categories } from "../shop/Shop"
 
-export const wallets = [
+export const products = [
   {
     name: "Bifold Wallet",
     price: 140,
     description: 'Bifold wallet from plastic bags',
-    img: 'https://optim.tildacdn.pub/tild3333-3035-4331-b638-323663313935/-/format/webp/MIT04573.jpg.webp'
+    img: 'https://optim.tildacdn.pub/tild3333-3035-4331-b638-323663313935/-/format/webp/MIT04573.jpg.webp',
+    category: "wallet",
+    id: "bifold-wallet"
   },
   {
     name: "Zippered wallet",
     price: 100,
     description: 'For cards, coins and bills',
-    img: 'https://optim.tildacdn.pub/tild6165-3136-4261-b764-343137636364/-/format/webp/MIT04678.JPG.webp'
-
+    img: 'https://optim.tildacdn.pub/tild6165-3136-4261-b764-343137636364/-/format/webp/MIT04678.JPG.webp',
+    category: "wallet",
+    id: "zippered-wallet"
   },
   {
     name: "Cardholder",
     price: 80,
     description: 'Cardholder from plastic bags',
-    img: 'https://optim.tildacdn.pub/tild3931-3437-4965-b136-323164363731/-/format/webp/MIT04888.jpg.webp'
-
+    img: 'https://optim.tildacdn.pub/tild3931-3437-4965-b136-323164363731/-/format/webp/MIT04888.jpg.webp',
+    category: "wallet",
+    id: "cardholder"
   },
+
+  {
+    name: "Docholder",
+    price: 140,
+    description: 'Bifold wallet from plastic bags',
+    img: 'https://optim.tildacdn.pub/tild3531-3430-4336-a237-666565393236/-/format/webp/MIT04497.jpg.webp',
+    category: "passport-covers",
+    id: "docholder"
+  }
 ];
 
 type CategoryParams = {
@@ -46,17 +59,17 @@ export default function Wallets() {
     <p className={styles.categoryTitle}>{category?.description}</p>
     <section className={styles.category}>
 
-      {wallets.map((wallet) =>
+      {products.map((product) =>
       (<div>
-        <Link to="/shop/product/fakeWallet" className="nav-link">
+        <Link to={`/shop/product/${product.id}`} className="nav-link">
           <div className={styles.card}>
             <img
-              src={wallet.img}
+              src={product.img}
               alt="картинка Wallets" />
           </div>
-          <h3 className={styles.prpductTitle}>{wallet.name} Жопа</h3>
-          <p className={styles.productDescription}>{wallet.description}</p>
-          <p className={styles.productPrice}>{wallet.price}</p>
+          <h3 className={styles.prpductTitle}>{product.name}</h3>
+          <p className={styles.productDescription}>{product.description}</p>
+          <p className={styles.productPrice}>{product.price}</p>
         </Link>
       </div>)
       )}

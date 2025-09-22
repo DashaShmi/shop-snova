@@ -32,7 +32,7 @@ function App() {
           <Route path="/shop">
             <Route index element={<Shop />} />
             <Route path="category/:categoryId" element={<Categoriy />} />
-            <Route path="/shop/product/fakeWallet" element={<ProductPage />} />
+            <Route path="product/:productId" element={<ProductPage />} />
           </Route>
         </Routes>
       </BrowserRouter>

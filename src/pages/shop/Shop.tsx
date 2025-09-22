@@ -21,7 +21,6 @@ export const categories = [
     id: "passport-covers",
     description: 'Passport covers from plastic bags',
     img: 'https://optim.tildacdn.pub/tild3465-6332-4535-a363-623762303938/-/format/webp/MIT04981.JPG.webp'
-
   },
 ];
 
