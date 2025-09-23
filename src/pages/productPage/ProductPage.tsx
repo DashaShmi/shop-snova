@@ -1,7 +1,6 @@
 import styles from "./ProductPage.module.scss";
-import imgUrl from '../../img/wallets.jpg';
 import { useParams } from "react-router-dom";
-import { ALL_PRODUCTS } from "../category/ALL_PRODUCTS";
+import { ALL_PRODUCTS } from "../data/ALL_PRODUCTS";
 
 type ProductParams = {
   productId: string;

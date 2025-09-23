@@ -1,5 +1,13 @@
+export type Category = "laptop-case" | "makeup-bags" | "passport-covers" | "wallets" | "bags";
 
-export const ALL_CATEGORIES = [
+interface ICategories {
+  id: Category;
+  name: string;
+  description: string;
+  img: string;
+}
+
+export const ALL_CATEGORIES: ICategories[] = [
   {
     name: "Wallets",
     id: "wallets",
@@ -17,5 +25,12 @@ export const ALL_CATEGORIES = [
     id: "passport-covers",
     description: 'Passport covers from plastic bags',
     img: 'https://optim.tildacdn.pub/tild3465-6332-4535-a363-623762303938/-/format/webp/MIT04981.JPG.webp'
+  },
+
+  {
+    name: "Makeup bags",
+    id: "makeup-bags",
+    description: 'Passport covers from plastic bags',
+    img: 'https://optim.tildacdn.pub/tild6636-3439-4665-a461-336461636361/-/format/webp/MIT05132.JPG.webp'
   },
 ];

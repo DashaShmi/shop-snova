@@ -1,8 +1,7 @@
 import styles from "./Category.module.scss";
-import imgUrl from '../../img/wallets.jpg';
 import { Link, useParams } from "react-router-dom";
-import { ALL_CATEGORIES } from "../shop/ALL_CATEGORIES";
-import { ALL_PRODUCTS } from "./ALL_PRODUCTS";
+import { ALL_CATEGORIES } from "../data/ALL_CATEGORIES";
+import { ALL_PRODUCTS } from "../data/ALL_PRODUCTS";
 
 type CategoryParams = {
   categoryId: string;
@@ -13,17 +12,9 @@ export default function Wallets() {
 
   const { categoryId } = useParams<CategoryParams>();
 
-  const category = ALL_CATEGORIES.find(elem => {
-    if (elem.id == categoryId) {
-      return true;
-    }
-  });
+  const category = ALL_CATEGORIES.find((elem) => elem.id === categoryId)
 
-  const productInCategory = ALL_PRODUCTS.filter(elem => {
-    if (elem.category == categoryId) {
-      return true;
-    }
-  })
+  const productInCategory = ALL_PRODUCTS.filter((elem) => elem.category === categoryId)
 
   return (<>
     <h2 className={styles.categoryTitle}>{category?.name}</h2>
@@ -31,7 +22,7 @@ export default function Wallets() {
     <section className={styles.category}>
 
       {productInCategory.map((product) =>
-      (<div>
+      (<div key={product.id}>
         <Link to={`/shop/product/${product.id}`} className="nav-link">
           <div className={styles.card}>
             <img
