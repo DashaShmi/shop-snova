@@ -16,21 +16,32 @@ export default function ProductPage() {
     }
   })
 
-  return (<>
-    <h2> Fake Product Page</h2>
-    <section className={styles.productPage}>
 
-      <div>
-        <div className={styles.card}>
-          <img
-            src={product?.img}
-            alt="картинка Wallets" />
+  return (<>
+
+    {product === undefined && (<>
+      <h2>Product not found</h2>
+    </>)}
+
+    {product && (<>
+      <h2> Detail Product Page</h2>
+      <section className={styles.productPage}>
+        <div>
+          <div className={styles.card}>
+
+            <img
+              src={product.img}
+              alt="картинка Wallets" />
+          </div>
+          <h3>{product.name}</h3>
+          <p>{product.description}</p>
+          <p>{product.price}</p>
         </div>
-        <h3>{product?.name}</h3>
-        <p>{product?.description}</p>
-        <p>{product?.price}</p>
-      </div>
-    </section >
+      </section >
+    </>)}
+
+
+
 
   </>)
 
