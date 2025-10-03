@@ -30,7 +30,7 @@ export default function Wallets() {
               alt="картинка Wallets" />
           </div>
           <h3 className={styles.prpductTitle}>{product.name}</h3>
-          <p className={styles.productDescription}>{product.description}</p>
+          <p className={styles.productDescription}>{product.fulllName}</p>
           <p className={styles.productPrice}>{product.price}</p>
         </Link>
       </div>)

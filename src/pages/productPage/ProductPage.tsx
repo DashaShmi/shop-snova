@@ -16,7 +16,6 @@ export default function ProductPage() {
     }
   })
 
-
   return (<>
 
     {product === undefined && (<>
@@ -24,18 +23,21 @@ export default function ProductPage() {
     </>)}
 
     {product && (<>
-      <h2> Detail Product Page</h2>
       <section className={styles.productPage}>
-        <div>
-          <div className={styles.card}>
-
+        <div className={styles.page}>
+          <div className={styles.preview}>
             <img
               src={product.img}
               alt="картинка Wallets" />
           </div>
-          <h3>{product.name}</h3>
-          <p>{product.description}</p>
-          <p>{product.price}</p>
+          <div className={styles.info}>
+            <h3>{product.name}</h3>
+            <p>{product.price} GEL</p>
+            <p className={styles.fulllName}>{product.fulllName}</p>
+            <div className={styles.bulletsDescription}>{product.description}</div>
+            <h4>IMPORTANT</h4>
+            <div style={{ fontStyle: 'italic' }}>None of the products look 100% alike, so please note that the product: print and lining you receive may be slightly different from the picture. Each plastic bag I use to make products is unique, making each produced item one of a kind.</div>
+          </div>
         </div>
       </section >
     </>)}
