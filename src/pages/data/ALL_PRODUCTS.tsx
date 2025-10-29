@@ -7,6 +7,9 @@ import carabiner from '../../img/carabiner.jpg';
 import slimCosmeticBag from '../../img/slim-cosmetic-bag.jpg';
 import bigCosmeticBag from '../../img/big-cosmetic-bag.jpg';
 import passportCover from '../../img/passport-cover.jpg';
+import passportCover2 from '../../img/passport-cover_2.jpg';
+import passportCover3 from '../../img/passport-cover_3.jpg';
+import passportCover4 from '../../img/passport-cover_4.jpg';
 import zipperedWallet from '../../img/zippered-wallet.jpg';
 import cardholder from '../../img/cardholder.jpg';
 
@@ -17,7 +20,7 @@ interface IProduct {
   price: number;
   fulllName: string;
   description: React.ReactNode;
-  img: string;
+  images: string[];
   category: Category;
   dimensions?: { h: number, w: number, d?: number }
 }
@@ -35,7 +38,7 @@ export const ALL_PRODUCTS: IProduct[] = [
         <li>4 card pockets</li>
         <li>1 bill pocket</li>
       </ul>,
-    img: bifoldWallet,
+    images: [bifoldWallet],
     category: "wallets",
     id: "bifold-wallet",
     dimensions: { h: 9, w: 11 }
@@ -51,7 +54,7 @@ export const ALL_PRODUCTS: IProduct[] = [
         <li>Waterproof and durable</li>
         <li>Handcrafted</li>
       </ul>,
-    img: zipperedWallet,
+    images: [zipperedWallet],
     category: "wallets",
     id: "zippered-wallet",
     dimensions: { h: 16, w: 12 }
@@ -68,7 +71,7 @@ export const ALL_PRODUCTS: IProduct[] = [
         <li>Sustainable</li>
         <li>Waterproof and durable</li>
       </ul>,
-    img: cardholder,
+    images: [cardholder],
     category: "wallets",
     id: "cardholder",
     dimensions: { h: 8, w: 10 }
@@ -86,7 +89,7 @@ export const ALL_PRODUCTS: IProduct[] = [
         <li>Sustainable</li>
         <li>Waterproof and durable</li>
       </ul>,
-    img: docholder,
+    images: [docholder],
     category: "passport-covers",
     id: "docholder",
     dimensions: { h: 15, w: 11 }
@@ -103,7 +106,7 @@ export const ALL_PRODUCTS: IProduct[] = [
         <li>Sustainable</li>
         <li>Waterproof and durable</li>
       </ul>,
-    img: passportCover,
+    images: [passportCover, passportCover2, passportCover3, passportCover4],
     category: "passport-covers",
     id: "passport-cover",
     dimensions: { h: 14, w: 10 }
@@ -119,7 +122,7 @@ export const ALL_PRODUCTS: IProduct[] = [
         <li>Waterproof and durable</li>
         <li>Pleasure of your contribution to waste reduction</li>
       </ul>,
-    img: bigCosmeticBag,
+    images: [bigCosmeticBag],
     category: "makeup-bags",
     id: "big-cosmetic-bag",
     dimensions: { h: 22, w: 28, d: 6 }
@@ -136,7 +139,7 @@ export const ALL_PRODUCTS: IProduct[] = [
         <li>Waterproof and durable</li>
         <li>Handcrafted</li>
       </ul>,
-    img: slimCosmeticBag,
+    images: [slimCosmeticBag],
     category: "makeup-bags",
     id: "slim-cosmetic-bag",
     dimensions: { h: 17, w: 23 }
@@ -154,7 +157,7 @@ export const ALL_PRODUCTS: IProduct[] = [
         <li>Waterproof and durable</li>
         <li>Handcrafted</li>
       </ul>,
-    img: carabiner,
+    images: [carabiner],
     category: "bags",
     id: "carbine-bag",
     dimensions: { h: 12, w: 15, d: 3 },
@@ -171,7 +174,7 @@ export const ALL_PRODUCTS: IProduct[] = [
         <li>Waterproof and durable</li>
         <li>Handcrafted</li>
       </ul>,
-    img: silverBag,
+    images: [silverBag],
     category: "bags",
     id: "silver-bag",
     dimensions: { h: 30, w: 40, d: 10 },

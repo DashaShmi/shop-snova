@@ -52,21 +52,16 @@ export default function ProductPage() {
               modules={[FreeMode, Navigation, Thumbs]}
               className={styles.mySwiper2}
             >
-              <SwiperSlide>
-                <img
-                  src={product.img}
-                  alt="картинка Wallets" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  src={product.img}
-                  alt="картинка Wallets" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  src={product.img}
-                  alt="картинка Wallets" />
-              </SwiperSlide>
+
+              {
+                product.images.map((img) => (
+                  <SwiperSlide>
+                    <img
+                      src={img}
+                      alt="картинка Wallets" />
+                  </SwiperSlide>
+                ))
+              }
             </Swiper>
 
             <Swiper
@@ -79,21 +74,15 @@ export default function ProductPage() {
               modules={[FreeMode, Navigation, Thumbs]}
               className={styles.mySwiper}
             >
-              <SwiperSlide>
-                <img
-                  src={product.img}
-                  alt="картинка Wallets" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  src={product.img}
-                  alt="картинка Wallets" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  src={product.img}
-                  alt="картинка Wallets" />
-              </SwiperSlide>
+              {
+                product.images.map((img) => (
+                  <SwiperSlide>
+                    <img
+                      src={img}
+                      alt="картинка Wallets" />
+                  </SwiperSlide>
+                ))
+              }
             </Swiper>
 
 
