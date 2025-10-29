@@ -1,6 +1,17 @@
-import styles from "./ProductPage.module.scss";
 import { useParams } from "react-router-dom";
 import { ALL_PRODUCTS } from "../data/ALL_PRODUCTS";
+import { Swiper, SwiperSlide, type SwiperClass } from 'swiper/react';
+import { useState } from "react";
+import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
+
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/navigation';
+import 'swiper/css/thumbs';
+
+import styles from "./ProductPage.module.scss";
+
+
 
 type ProductParams = {
   productId: string;
@@ -9,6 +20,7 @@ type ProductParams = {
 export default function ProductPage() {
 
   const { productId } = useParams<ProductParams>();
+  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperClass | null>(null);
 
   const product = ALL_PRODUCTS.find(elem => {
     if (elem.id == productId) {
@@ -25,10 +37,66 @@ export default function ProductPage() {
     {product && (<>
       <section className={styles.productPage}>
         <div className={styles.page}>
+
+
           <div className={styles.preview}>
-            <img
-              src={product.img}
-              alt="картинка Wallets" />
+            <Swiper
+              style={{
+                '--swiper-navigation-color': '#fff',
+                '--swiper-pagination-color': '#fff',
+              }}
+              loop={true}
+              spaceBetween={10}
+              navigation={true}
+              thumbs={{ swiper: thumbsSwiper }}
+              modules={[FreeMode, Navigation, Thumbs]}
+              className={styles.mySwiper2}
+            >
+              <SwiperSlide>
+                <img
+                  src={product.img}
+                  alt="картинка Wallets" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  src={product.img}
+                  alt="картинка Wallets" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  src={product.img}
+                  alt="картинка Wallets" />
+              </SwiperSlide>
+            </Swiper>
+
+            <Swiper
+              onSwiper={setThumbsSwiper}
+              loop={true}
+              spaceBetween={10}
+              slidesPerView={4}
+              freeMode={true}
+              watchSlidesProgress={true}
+              modules={[FreeMode, Navigation, Thumbs]}
+              className={styles.mySwiper}
+            >
+              <SwiperSlide>
+                <img
+                  src={product.img}
+                  alt="картинка Wallets" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  src={product.img}
+                  alt="картинка Wallets" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  src={product.img}
+                  alt="картинка Wallets" />
+              </SwiperSlide>
+            </Swiper>
+
+
           </div>
           <div className={styles.info}>
             <h3>{product.name}</h3>

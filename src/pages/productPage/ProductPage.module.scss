@@ -10,8 +10,6 @@
 }
 
 .preview {
-  aspect-ratio: 6/7;
-  border-radius: 15px;
   overflow: hidden;
   flex: 1;
 
@@ -29,4 +27,44 @@
   font-weight: 580;
 }
 
-// .bulletsDescription ul {}
+.swiper {
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.swiper-slide {
+  background-size: cover;
+  background-position: center;
+}
+
+.mySwiper2 img {
+  aspect-ratio: 4/5;
+  object-fit: cover;
+}
+
+.mySwiper {
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+
+.mySwiper img {
+  aspect-ratio: 4/6;
+  object-fit: cover;
+}
+
+.mySwiper .swiper-slide {
+  // height: 100%;
+  // opacity: 0.4;
+}
+
+.mySwiper .swiper-slide-thumb-active {
+  // opacity: 1;
+}
+
+.swiper-slide img {
+  display: block;
+  // width: 100%;
+  // height: 100%;
+  object-fit: cover;
+}
