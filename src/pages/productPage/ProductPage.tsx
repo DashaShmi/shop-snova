@@ -31,9 +31,16 @@ export default function ProductPage() {
   })
 
   function onClick() {
-    console.log(product?.id)
-    dispatch(addProduct());
-    // setCart([...cart, productId!])
+
+    if (productId !== undefined) {
+      dispatch(addProduct(productId));
+      console.log(productId)
+    } else {
+      console.log("productId не найден (undefined)")
+    }
+
+
+
   }
 
 
