@@ -10,6 +10,8 @@ import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 
 import styles from "./ProductPage.module.scss";
+import { useAppSelector } from "../../services/store";
+import { getOrder } from "../../services/slices/OrderSlice";
 
 
 
@@ -18,15 +20,21 @@ type ProductParams = {
 };
 
 export default function ProductPage() {
-
   const { productId } = useParams<ProductParams>();
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperClass | null>(null);
+  const cart = useAppSelector(getOrder);
 
   const product = ALL_PRODUCTS.find(elem => {
     if (elem.id == productId) {
       return true;
     }
   })
+
+  function onClick() {
+    console.log(product?.id)
+
+    // setCart([...cart, productId!])
+  }
 
   return (<>
 
@@ -35,9 +43,15 @@ export default function ProductPage() {
     </>)}
 
     {product && (<>
+
+      <h3>Cart {cart.length}</h3>
+
+      <ul>
+        {cart.map(id => <li>{id}</li>)}
+      </ul>
+
       <section className={styles.productPage}>
         <div className={styles.page}>
-
 
           <div className={styles.preview}>
             <Swiper
@@ -94,6 +108,7 @@ export default function ProductPage() {
             <div className={styles.bulletsDescription}>{product.description}</div>
             <h4>IMPORTANT</h4>
             <div style={{ fontStyle: 'italic' }}>None of the products look 100% alike, so please note that the product: print and lining you receive may be slightly different from the picture. Each plastic bag I use to make products is unique, making each produced item one of a kind.</div>
+            <button onClick={onClick}>Купить</button>
           </div>
         </div>
       </section >
