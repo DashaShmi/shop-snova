@@ -10,9 +10,8 @@ import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 
 import styles from "./ProductPage.module.scss";
-import { useAppSelector } from "../../services/store";
-import { getOrder } from "../../services/slices/OrderSlice";
-
+import { useAppDispatch, useAppSelector } from "../../services/store";
+import { addProduct, getOrder } from "../../services/slices/OrderSlice";
 
 
 type ProductParams = {
@@ -20,6 +19,7 @@ type ProductParams = {
 };
 
 export default function ProductPage() {
+  const dispatch = useAppDispatch();
   const { productId } = useParams<ProductParams>();
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperClass | null>(null);
   const cart = useAppSelector(getOrder);
@@ -32,9 +32,10 @@ export default function ProductPage() {
 
   function onClick() {
     console.log(product?.id)
-
+    dispatch(addProduct());
     // setCart([...cart, productId!])
   }
+
 
   return (<>
 
@@ -120,7 +121,3 @@ export default function ProductPage() {
   </>)
 
 }
-
-
-
-

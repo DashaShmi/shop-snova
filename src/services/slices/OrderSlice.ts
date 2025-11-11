@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
 export interface OrderState {
   products: string[];
@@ -14,9 +14,20 @@ export const orderSlice = createSlice({
   selectors: {
     getOrder: (state) => state.products
   },
-  reducers: {},
+  reducers: {
+    addProduct: (state, action: PayloadAction) => {
+      state.products.push("new")
+      // state.products.push(action.payload)
+    },
+  },
 })
 
 export const {
   getOrder
 } = orderSlice.selectors;
+
+export const {
+  addProduct
+} = orderSlice.actions;
+
+export const orderReducer = orderSlice.reducer;
