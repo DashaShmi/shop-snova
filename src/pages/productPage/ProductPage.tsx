@@ -22,7 +22,6 @@ export default function ProductPage() {
   const dispatch = useAppDispatch();
   const { productId } = useParams<ProductParams>();
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperClass | null>(null);
-  const cart = useAppSelector(getOrder);
 
   const product = ALL_PRODUCTS.find(elem => {
     if (elem.id == productId) {
@@ -32,17 +31,20 @@ export default function ProductPage() {
 
   function onClick() {
 
-    if (productId !== undefined) {
-      dispatch(addProduct(productId));
+    if (product !== undefined) {
+      const action = addProduct(product);
+      // debugger;
+      dispatch(action);
+
+      // const action2 = { type: 'order/addProduct', payload: product };
+      // dispatch(action2);
+
       console.log(productId)
     } else {
       console.log("productId не найден (undefined)")
     }
 
-
-
   }
-
 
   return (<>
 
@@ -51,12 +53,6 @@ export default function ProductPage() {
     </>)}
 
     {product && (<>
-
-      <h3>Cart {cart.length}</h3>
-
-      <ul>
-        {cart.map(id => <li>{id}</li>)}
-      </ul>
 
       <section className={styles.productPage}>
         <div className={styles.page}>
@@ -121,9 +117,6 @@ export default function ProductPage() {
         </div>
       </section >
     </>)}
-
-
-
 
   </>)
 

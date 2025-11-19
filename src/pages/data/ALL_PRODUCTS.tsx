@@ -14,7 +14,7 @@ import zipperedWallet from '../../img/zippered-wallet.jpg';
 import cardholder from '../../img/cardholder.jpg';
 
 
-interface IProduct {
+export interface IProduct {
   id: string;
   name: string;
   price: number;

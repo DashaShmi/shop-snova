@@ -1,11 +1,14 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
+import { ALL_PRODUCTS, type IProduct } from "../../pages/data/ALL_PRODUCTS";
 
 export interface OrderState {
-  products: string[];
+  products: IProduct[];
 }
 
 export const initialOrderState: OrderState = {
-  products: ["fika", "pika"]
+  products: [
+    ...ALL_PRODUCTS.slice(0, 5)
+  ]
 };
 
 export const orderSlice = createSlice({
@@ -14,10 +17,19 @@ export const orderSlice = createSlice({
   selectors: {
     getOrder: (state) => state.products
   },
+
   reducers: {
-    addProduct: (state, action: PayloadAction<string>) => {
+
+    addProduct: (state, action: PayloadAction<IProduct>) => {
+      // debugger
       state.products.push(action.payload)
     },
+
+    deleteProduct: (state, action: PayloadAction<{ id: string }>) => {
+      const index = state.products.findIndex((x) => x.id === action.payload.id);
+      state.products.splice(index, 1);
+
+    }
   },
 })
 
@@ -26,7 +38,8 @@ export const {
 } = orderSlice.selectors;
 
 export const {
-  addProduct
+  addProduct,
+  deleteProduct,
 } = orderSlice.actions;
 
 export const orderReducer = orderSlice.reducer;

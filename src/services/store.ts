@@ -14,3 +14,25 @@ export type AppDispatch = typeof store.dispatch;
 export const useAppDispatch: () => AppDispatch = () => useDispatch();
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 export default store;
+
+
+
+
+
+
+
+interface Animal {
+  name: string;
+}
+
+
+function animalFactory(text: string): Animal {
+  const animal: Animal = { name: `животное:${text}` };
+  return animal
+}
+
+const dog1: Animal = { name: "животное:собака" };
+const cat1: Animal = { name: "животное:кот" };
+
+const dog2: Animal = animalFactory("собака");
+const cat2: Animal = animalFactory("кот");
