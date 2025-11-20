@@ -20,10 +20,14 @@ export default function Cart() {
       {cart.map(product => <div className={styles.productAtCart}>
         <img src={product.images[0]} />
         <div className={styles.productName}>{product.name}</div>
-        <div className={styles.productPrice}> {product.price}</div>
+        <div className={styles.productPrice}> {product.price} GEL</div>
         <button onClick={() => handleDelete(product)} className={styles.deleteButton}>✖️</button>
       </div>
       )}
+      <div>
+        <label className={styles.label}>Ваш никнейм в телеграме для связи</label>
+        <input type="text" className={styles.inputField} />
+      </div>
 
     </div>
   </>)

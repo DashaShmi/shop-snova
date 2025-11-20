@@ -111,12 +111,13 @@ export default function ProductPage() {
             <p className={styles.fulllName}>{product.fulllName}</p>
             <div className={styles.bulletsDescription}>{product.description}</div>
             <h4>IMPORTANT</h4>
-            <div style={{ fontStyle: 'italic' }}>None of the products look 100% alike, so please note that the product: print and lining you receive may be slightly different from the picture. Each plastic bag I use to make products is unique, making each produced item one of a kind.</div>
-            <button onClick={onClick}>Купить</button>
+            <div className={styles.italic}>None of the products look 100% alike, so please note that the product: print and lining you receive may be slightly different from the picture. Each plastic bag I use to make products is unique, making each produced item one of a kind.</div>
+            <button className={styles.buttonBuy} onClick={onClick}>Buy</button>
           </div>
         </div>
       </section >
-    </>)}
+    </>)
+    }
 
   </>)
 

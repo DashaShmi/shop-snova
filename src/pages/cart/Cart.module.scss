@@ -7,7 +7,7 @@
 }
 
 .deleteButton {
-  padding: 10px 20px;
+  padding: 10px 15px;
 }
 
 .productAtCart {
@@ -29,4 +29,20 @@
 
 .productPrice {
   padding: 10px;
+}
+
+.inputField {
+  height: 55px;
+  border: 1px solid #000;
+  font-size: 20px;
+  padding-right: 180px;
+  padding-left: 10px;
+}
+
+.label {
+  margin-top: 30px;
+  font-size: 17px;
+  font-weight: 300;
+  text-align: left;
+  display: block;
 }
