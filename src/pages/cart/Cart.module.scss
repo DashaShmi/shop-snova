@@ -55,6 +55,20 @@
   display: block;
 }
 
+.line {
+  width: 100%;
+  border-bottom: 1px solid #000;
+  margin: 20px 0;
+}
+
+.total {
+  font-weight: 650;
+  font-size: 23px;
+  text-align: end;
+  margin-top: 37px;
+
+}
+
 
 .orderButton {
   padding: 10px 46px
