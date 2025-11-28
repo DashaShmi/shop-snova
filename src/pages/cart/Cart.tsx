@@ -11,13 +11,29 @@ export default function Cart() {
   const cart = useAppSelector(getOrder);
   const dispatch = useAppDispatch();
   const [telegram, setTelegram] = useState("");
+  const [error, setError] = useState("");
 
   const totalPrice = cart.reduce((sum, product) => {
     return sum + product.price;
   }, 0);
 
   const sendTelegram = (e: React.FormEvent) => {
-    e.preventDefault();                // не даем странице перезагружаться
+    e.preventDefault();                // не даем странице перезагружаться. 
+
+    if (telegram.trim() === "") {
+      setError("Enter your nickname");
+      return;
+    }
+
+    const latinRegex = /^[A-Za-z0-9_]+$/;
+    if (!latinRegex.test(telegram)) {
+      setError("Use only latin letters, numbers or _");
+      return;
+    }
+
+    setError("");
+    console.log("Никнейм:", telegram);
+
     console.log("Никнейм:", telegram);
   };
 
@@ -43,9 +59,10 @@ export default function Cart() {
         <form onSubmit={sendTelegram} method="post">
           <div className={styles.line} />
           <div className={styles.total}>Estimated Total: {totalPrice} GEL</div>
-          <p className={styles.label}>Your nickname in Telegram for communication</p>
+          <p className={styles.label}>Your nickname in Telegram or Instagram for communication</p>
           <input type="text" className={styles.inputField} value={telegram}
             onChange={(e) => setTelegram(e.target.value)} />
+          {error && <p className={styles.error}>{error}</p>}
           <button type="submit" className={styles.orderButton}>Order</button>
         </form>
         <p className={styles.label}>After ordering through the cart. I will contact you for payment and further processing. Or you can place an order through the Instagram by contacting me personally.
