@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from "../../services/store";
 import styles from "./Cart.module.scss";
 import { deleteProduct } from "../../services/slices/OrderSlice"
 import type { IProduct } from "../data/ALL_PRODUCTS";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 
@@ -13,26 +13,37 @@ export default function Cart() {
   const [telegram, setTelegram] = useState("");
   const [error, setError] = useState("");
 
+  const [formTouched, setFormTouched] = useState(false);
+
   const totalPrice = cart.reduce((sum, product) => {
     return sum + product.price;
   }, 0);
 
-  const sendTelegram = (e: React.FormEvent) => {
-    e.preventDefault();                // не даем странице перезагружаться. 
-
+  const checkForm = (): boolean => {
     if (telegram.trim() === "") {
       setError("Enter your nickname");
-      return;
-    }
-
-    const latinRegex = /^[A-Za-z0-9_]+$/;
-    if (!latinRegex.test(telegram)) {
-      setError("Use only latin letters, numbers or _");
-      return;
+      return false;
     }
 
     setError("");
-    console.log("Никнейм:", telegram);
+
+    return true;
+  }
+
+  useEffect(() => {
+    checkForm()
+  }, [telegram]);
+
+  const submitHandler = (e: React.FormEvent) => {
+    e.preventDefault();                // не даем странице перезагружаться. 
+
+    setFormTouched(true);
+
+    const formIsValid = checkForm();
+
+    if (!formIsValid) {
+      return;
+    }
 
     console.log("Никнейм:", telegram);
   };
@@ -56,13 +67,16 @@ export default function Cart() {
         </div>
         )}
 
-        <form onSubmit={sendTelegram} method="post">
+        <form onSubmit={submitHandler} method="post">
           <div className={styles.line} />
           <div className={styles.total}>Estimated Total: {totalPrice} GEL</div>
           <p className={styles.label}>Your nickname in Telegram or Instagram for communication</p>
           <input type="text" className={styles.inputField} value={telegram}
-            onChange={(e) => setTelegram(e.target.value)} />
-          {error && <p className={styles.error}>{error}</p>}
+            onChange={(e) => {
+              setTelegram(e.target.value);
+              setFormTouched(true);
+            }} />
+          {formTouched && error && <p className={styles.error}>{error}</p>}
           <button type="submit" className={styles.orderButton}>Order</button>
         </form>
         <p className={styles.label}>After ordering through the cart. I will contact you for payment and further processing. Or you can place an order through the Instagram by contacting me personally.
