@@ -1,11 +1,36 @@
 import type { Category } from "./ALL_CATEGORIES";
 
 import bifoldWallet from '../../img/bifold-wallet.jpg';
+import bifoldWallet2 from '../../img/bifold-wallet_2.jpg';
+import bifoldWallet3 from '../../img/bifold-wallet_3.jpg';
+import bifoldWallet4 from '../../img/bifold-wallet_4.jpg';
+import bifoldWallet5 from '../../img/bifold-wallet_5.jpg';
+
+
 import docholder from '../../img/docholder.jpg';
+
 import silverBag from '../../img/silver-bag.jpg';
+import silverBag2 from '../../img/silver-bag_2.jpg';
+import silverBag3 from '../../img/silver-bag_3.jpg';
+
+import ropeBag from '../../img/ropeBag.jpg';
+import ropeBag2 from '../../img/ropeBag_2.jpg';
+import ropeBag3 from '../../img/ropeBag_3.jpg';
+import ropeBag4 from '../../img/ropeBag_4.jpg';
+import ropeBag5 from '../../img/ropeBag_5.jpg';
+import ropeBag6 from '../../img/ropeBag_6.jpg';
+
 import carabiner from '../../img/carabiner.jpg';
+import carabiner2 from '../../img/carabiner_2.jpg';
+import carabiner3 from '../../img/carabiner_3.jpg';
+import carabiner4 from '../../img/carabiner_4.jpg';
+import carabiner5 from '../../img/carabiner_5.jpg';
+import carabiner6 from '../../img/carabiner_6.jpg';
+
+
 import slimCosmeticBag from '../../img/slim-cosmetic-bag.jpg';
 import bigCosmeticBag from '../../img/big-cosmetic-bag.jpg';
+
 import passportCover from '../../img/passport-cover.jpg';
 import passportCover2 from '../../img/passport-cover_2.jpg';
 import passportCover3 from '../../img/passport-cover_3.jpg';
@@ -38,7 +63,7 @@ export const ALL_PRODUCTS: IProduct[] = [
         <li>4 card pockets</li>
         <li>1 bill pocket</li>
       </ul>,
-    images: [bifoldWallet],
+    images: [bifoldWallet, bifoldWallet2, bifoldWallet3, bifoldWallet4, bifoldWallet5],
     category: "wallets",
     id: "bifold-wallet",
     dimensions: { h: 9, w: 11 }
@@ -157,7 +182,7 @@ export const ALL_PRODUCTS: IProduct[] = [
         <li>Waterproof and durable</li>
         <li>Handcrafted</li>
       </ul>,
-    images: [carabiner],
+    images: [carabiner, carabiner2, carabiner3, carabiner4, carabiner5, carabiner6],
     category: "bags",
     id: "carbine-bag",
     dimensions: { h: 12, w: 15, d: 3 },
@@ -174,9 +199,26 @@ export const ALL_PRODUCTS: IProduct[] = [
         <li>Waterproof and durable</li>
         <li>Handcrafted</li>
       </ul>,
-    images: [silverBag],
+    images: [silverBag, silverBag2, silverBag3],
     category: "bags",
     id: "silver-bag",
     dimensions: { h: 30, w: 40, d: 10 },
+  },
+
+  {
+    name: "Rope bag",
+    price: 280,
+    fulllName: 'With silver',
+    description:
+      <ul>
+        <li>Upcycled materials</li>
+        <li>Handle from retired climbing rope</li>
+        <li>Waterproof and durable</li>
+        <li>Handcrafted</li>
+      </ul>,
+    images: [ropeBag, ropeBag2, ropeBag3, ropeBag4, ropeBag5, ropeBag6],
+    category: "bags",
+    id: "rope-bag",
+    dimensions: { h: 24, w: 27, d: 6 },
   },
 ];

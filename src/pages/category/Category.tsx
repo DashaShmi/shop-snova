@@ -26,7 +26,7 @@ export default function Wallets() {
         <Link to={`/shop/product/${product.id}`} className="nav-link">
           <div className={styles.card}>
             <img
-              src={product.images}
+              src={product.images[0]}
               alt="картинка Wallets" />
           </div>
           <h3 className={styles.prpductTitle}>{product.name}</h3>
