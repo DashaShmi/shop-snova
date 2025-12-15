@@ -29,14 +29,32 @@ import carabiner6 from '../../img/carabiner_6.jpg';
 
 
 import slimCosmeticBag from '../../img/slim-cosmetic-bag.jpg';
+import slimCosmeticBag2 from '../../img/slim-cosmetic-bag_2.jpg';
+
 import bigCosmeticBag from '../../img/big-cosmetic-bag.jpg';
+import bigCosmeticBag2 from '../../img/big-cosmetic-bag_2.jpg';
+import bigCosmeticBag3 from '../../img/big-cosmetic-bag_3.jpg';
+import bigCosmeticBag4 from '../../img/big-cosmetic-bag_4.jpg';
 
 import passportCover from '../../img/passport-cover.jpg';
 import passportCover2 from '../../img/passport-cover_2.jpg';
 import passportCover3 from '../../img/passport-cover_3.jpg';
 import passportCover4 from '../../img/passport-cover_4.jpg';
+import passportCover5 from '../../img/passport-cover_5.jpg';
+
 import zipperedWallet from '../../img/zippered-wallet.jpg';
+import zipperedWallet2 from '../../img/zippered-wallet_2.jpg';
+import zipperedWallet3 from '../../img/zippered-wallet_3.jpg';
+
 import cardholder from '../../img/cardholder.jpg';
+import cardholder2 from '../../img/cardholder_2.jpg';
+import cardholder3 from '../../img/cardholder_3.jpg';
+import cardholder4 from '../../img/cardholder_4.jpg';
+
+import surprise from '../../img/surprise.jpg';
+import surprise2 from '../../img/surprise_2.jpg';
+import surprise3 from '../../img/surprise_3.jpg';
+import surprise4 from '../../img/surprise_4.jpg';
 
 
 export interface IProduct {
@@ -52,7 +70,7 @@ export interface IProduct {
 
 export const ALL_PRODUCTS: IProduct[] = [
   {
-    name: "Bifold Wallet",
+    name: "Bifold wallet",
     price: 140,
     fulllName: 'Bifold wallet from plastic bags',
     description:
@@ -79,7 +97,7 @@ export const ALL_PRODUCTS: IProduct[] = [
         <li>Waterproof and durable</li>
         <li>Handcrafted</li>
       </ul>,
-    images: [zipperedWallet],
+    images: [zipperedWallet, zipperedWallet2, zipperedWallet3],
     category: "wallets",
     id: "zippered-wallet",
     dimensions: { h: 16, w: 12 }
@@ -96,7 +114,7 @@ export const ALL_PRODUCTS: IProduct[] = [
         <li>Sustainable</li>
         <li>Waterproof and durable</li>
       </ul>,
-    images: [cardholder],
+    images: [cardholder, cardholder2, cardholder3, cardholder4],
     category: "wallets",
     id: "cardholder",
     dimensions: { h: 8, w: 10 }
@@ -131,9 +149,26 @@ export const ALL_PRODUCTS: IProduct[] = [
         <li>Sustainable</li>
         <li>Waterproof and durable</li>
       </ul>,
-    images: [passportCover, passportCover2, passportCover3, passportCover4],
+    images: [passportCover, passportCover2, passportCover3, passportCover4, passportCover5],
     category: "passport-covers",
     id: "passport-cover",
+    dimensions: { h: 14, w: 10 }
+  },
+
+  {
+    name: "🔥Сrazy cover - surprise🔥",
+    price: 60,
+    fulllName: 'for 1 passport',
+    description:
+      <ul>
+        <li>If you’re a fan of wild, chaotic prints — this one’s for you</li>
+        <li>You won’t know which pattern you’ll get until it arrives. That’s the fun part</li>
+        <li>A bizarre, bold, beautifully upcycled piece that’s impossible to predict</li>
+        <li>Sustainable</li>
+      </ul>,
+    images: [surprise, surprise2, surprise3, surprise4],
+    category: "passport-covers",
+    id: "passport-cover-surprise",
     dimensions: { h: 14, w: 10 }
   },
   {
@@ -145,9 +180,9 @@ export const ALL_PRODUCTS: IProduct[] = [
         <li>Upcycled out of 3-6 plastic bags</li>
         <li>Sustainable</li>
         <li>Waterproof and durable</li>
-        <li>Pleasure of your contribution to waste reduction</li>
+        <li>Usually one side with print, the other fully silver</li>
       </ul>,
-    images: [bigCosmeticBag],
+    images: [bigCosmeticBag, bigCosmeticBag2, bigCosmeticBag3, bigCosmeticBag4],
     category: "makeup-bags",
     id: "big-cosmetic-bag",
     dimensions: { h: 22, w: 28, d: 6 }
@@ -156,7 +191,7 @@ export const ALL_PRODUCTS: IProduct[] = [
   {
     name: "Slim cosmetic bag",
     price: 100,
-    fulllName: 'Cosmetic bag of melted bags and packing pets feed.',
+    fulllName: 'With silver.',
     description:
       <ul>
         <li>Upcycled out of 2-4 plastic bags</li>
@@ -164,7 +199,7 @@ export const ALL_PRODUCTS: IProduct[] = [
         <li>Waterproof and durable</li>
         <li>Handcrafted</li>
       </ul>,
-    images: [slimCosmeticBag],
+    images: [slimCosmeticBag, slimCosmeticBag2],
     category: "makeup-bags",
     id: "slim-cosmetic-bag",
     dimensions: { h: 17, w: 23 }
