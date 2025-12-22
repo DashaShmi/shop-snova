@@ -12,35 +12,55 @@
   border-bottom: 1px solid #eee;
 }
 
-.nav-left,
-.nav-right {
+.navLeft,
+.navRight {
   display: flex;
   align-items: center;
   gap: 1.5rem;
 }
 
-.nav-center {
-  font-weight: 700;
-  font-size: 1.2rem;
-}
 
 .nav-logo {
-  color: black;
+  color: #333;
   text-decoration: none;
   font-weight: bold;
 }
 
-.nav-link {
+.navLink {
   text-decoration: none;
-  color: black;
+  color: #333;
   transition: opacity 0.2s ease;
 }
 
-.nav-link:hover {
+.navLink:hover {
   opacity: 0.6;
 }
 
-.nav-icon {
+.navIcon {
   cursor: pointer;
   font-size: 1.1rem;
+}
+
+.cartWrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cartBadge {
+  width: 20px;
+  height: 20px;
+
+  background-color: #f763fb;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  border-radius: 50%;
 }

@@ -1,7 +1,7 @@
 .wrap-home {
   position: relative;
   height: 100vh;
-  background-image: url("../../img/MIT04515.JPG");
+  background-image: url("../../img/background-home.JPG");
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -40,7 +40,7 @@ a.home-button {
   border: 0;
   transition: 0.5s;
   color: #fff;
-  background: #000;
+  background: #1D27C3;
   box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
   border-radius: 50px;
 }

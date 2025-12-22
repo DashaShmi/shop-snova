@@ -3,20 +3,19 @@
   padding: 2rem 1rem;
 }
 
-.contacts-address {
-  font-size: 1.1rem;
+.contactsAddress {
   color: #333;
   margin-bottom: 1.5rem;
 }
 
-.contacts-icons {
+.contactsIcons {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
 }
 
-.contacts-icons a {
-  background-color: black;
+.contactsIcons a {
+  background-color: #f763fb;
   color: white;
   border-radius: 50%;
   width: 48px;
@@ -29,6 +28,6 @@
   text-decoration: none;
 }
 
-.contacts-icons a:hover {
+.contactsIcons a:hover {
   opacity: 0.6;
 }

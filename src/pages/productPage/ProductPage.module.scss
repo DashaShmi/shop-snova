@@ -12,6 +12,7 @@
 .preview {
   overflow: hidden;
   flex: 1;
+  user-select: none;
 
   img {
     display: block;
@@ -73,7 +74,11 @@
   margin-top: 20px;
 }
 
-.italic {
-  font-style: italic;
+.descrImportant {
   font-size: 17px;
+}
+
+.dimensions {
+  font-size: 17px;
+  font-style: italic;
 }

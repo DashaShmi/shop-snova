@@ -3,6 +3,7 @@ import { ALL_PRODUCTS } from "../data/ALL_PRODUCTS";
 import { Swiper, SwiperSlide, type SwiperClass } from 'swiper/react';
 import { useState } from "react";
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
+import { useNavigate } from 'react-router-dom';
 
 import 'swiper/css';
 import 'swiper/css/free-mode';
@@ -20,6 +21,7 @@ type ProductParams = {
 
 export default function ProductPage() {
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
   const { productId } = useParams<ProductParams>();
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperClass | null>(null);
 
@@ -36,13 +38,11 @@ export default function ProductPage() {
       // debugger;
       dispatch(action);
 
-      // const action2 = { type: 'order/addProduct', payload: product };
-      // dispatch(action2);
-
       console.log(productId)
     } else {
       console.log("productId не найден (undefined)")
     }
+    navigate("/cart");
 
   }
 
@@ -110,9 +110,13 @@ export default function ProductPage() {
             <p>{product.price} GEL</p>
             <p className={styles.fulllName}>{product.fulllName}</p>
             <div className={styles.bulletsDescription}>{product.description}</div>
+            <p className={styles.dimensions}>
+              Dimensions: {product.dimensions?.w}×{product.dimensions?.h}{product.dimensions?.d && <>×{product.dimensions.d}</>}
+              cm
+            </p>
             <h4>IMPORTANT</h4>
-            <div className={styles.italic}>None of the products look 100% alike, so please note that the product: print and lining you receive may be slightly different from the picture. Each plastic bag I use to make products is unique, making each produced item one of a kind.</div>
-            <button className={styles.buttonBuy} onClick={onClick}>Buy</button>
+            <div className={styles.descrImportant}>None of the products look 100% alike, so please note that the product: print and lining you receive may be slightly different from the picture. Each plastic bag I use to make products is unique, making each produced item one of a kind.</div>
+            <button className={styles.buttonBuy} onClick={onClick}>BUY</button>
           </div>
         </div>
       </section >

@@ -62,7 +62,7 @@ export default function Cart() {
           <img src={product.images[0]} />
           <div className={styles.productName}>{product.name}</div>
           <div className={styles.productPrice}> {product.price} GEL</div>
-          <button onClick={() => handleDelete(product)} className={styles.deleteButton}>✖️</button>
+          <button onClick={() => handleDelete(product)} className={styles.deleteButton}> Х </button>
 
         </div>
         )}
@@ -77,7 +77,7 @@ export default function Cart() {
               setFormTouched(true);
             }} />
           {formTouched && error && <p className={styles.error}>{error}</p>}
-          <button type="submit" className={styles.orderButton}>Order</button>
+          <button type="submit" className={styles.orderButton}>ORDER</button>
         </form>
         <p className={styles.label}>After ordering through the cart. I will contact you for payment and further processing. Or you can place an order through the Instagram by contacting me personally.
           For orders to another country the shipping cost is calculated individually.</p>

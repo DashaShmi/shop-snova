@@ -8,6 +8,10 @@ import bifoldWallet5 from '../../img/bifold-wallet_5.jpg';
 
 
 import docholder from '../../img/docholder.jpg';
+import docholder2 from '../../img/docholder_2.jpg';
+import docholder3 from '../../img/docholder_3.jpg';
+import docholder4 from '../../img/docholder_4.jpg';
+
 
 import silverBag from '../../img/silver-bag.jpg';
 import silverBag2 from '../../img/silver-bag_2.jpg';
@@ -132,7 +136,7 @@ export const ALL_PRODUCTS: IProduct[] = [
         <li>Sustainable</li>
         <li>Waterproof and durable</li>
       </ul>,
-    images: [docholder],
+    images: [docholder, docholder2, docholder3, docholder4],
     category: "passport-covers",
     id: "docholder",
     dimensions: { h: 15, w: 11 }
