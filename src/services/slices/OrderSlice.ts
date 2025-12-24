@@ -7,7 +7,7 @@ export interface OrderState {
 
 export const initialOrderState: OrderState = {
   products: [
-    ...ALL_PRODUCTS.slice(0, 5)
+    ...ALL_PRODUCTS.slice(0, 0)
   ]
 };
 

@@ -11,7 +11,7 @@ export default function About() {
           <p>
             Hi everyone! My name is Dasha, creator of SNOVA. I dance to jazz, ride
             my bike, go hiking and swim. SNOVA – is my project about turning plastic
-            waste into sustainable bags & accessories.
+            waste into sustainable bags & accessories. Alongside making accessories, I host sewing workshops where people learn how to upcycle old plastic bags into a new material and create their own pieces.
           </p>
 
           <h3>WHAT I DO</h3>

@@ -4,9 +4,11 @@ import styles from "./Contacts.module.scss";
 export default function Contacts() {
   return (<section className={styles.contacts}>
     <p className={styles.contactsAddress}>Based in Tbilisi, Georgia. Shipping worldwide.</p>
-    <div className={styles.contactsDescr}>
-      SNOVA is a small handmade project. If you have questions, ideas, or want a custom piece — just message me.
+    <div>
+      SNOVA is a small handmade project.
+      I host sewing workshops where participants learn how to create new material from old plastic bags and make accessories by hand. If you have questions, ideas, or want a custom piece — just message me.
     </div>
+    <div className={styles.divider}></div>
     <div className={styles.contactsIcons}>
       <a href="https://www.instagram.com/snova.upcycle" target="_blank" rel="noopener noreferrer">
         <FaInstagram />

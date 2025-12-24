@@ -5,6 +5,9 @@
   text-align: center;
   box-sizing: border-box;
   font-size: 18px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction:  column;
 }
 
 .logo {

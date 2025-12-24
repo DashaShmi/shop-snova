@@ -1,6 +1,9 @@
 .contacts {
   text-align: center;
   padding: 2rem 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .contactsAddress {
@@ -30,4 +33,8 @@
 
 .contactsIcons a:hover {
   opacity: 0.6;
+}
+
+.divider {
+  flex: 1;
 }

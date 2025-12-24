@@ -10,7 +10,7 @@ export default function Navbar() {
   return (
     <header className={styles.navbar}>
       <div className={styles.navLeft}>
-        <Link to="/" className="nav-link">SNOVA</Link>
+        <Link to="/" className={styles.navLink}>SNOVA</Link>
       </div>
 
       <div className={styles.navRight}>
