@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useParams } from "react-router-dom"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Home from "./pages/home/Home"
 import Shop from "./pages/shop/Shop"
 import Cart from "./pages/cart/Cart"
@@ -7,7 +7,7 @@ import Navbar from "./pages/components/Navbar"
 import Contacts from "./pages/contacts/Contacts"
 import Categoriy from "./pages/category/Category"
 import ProductPage from "./pages/productPage/ProductPage"
-import './App.css'
+import './App.scss'
 
 // категории
 // shop/categories/wallets/

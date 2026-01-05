@@ -1,3 +1,8 @@
+@use 'swiper/css';
+@use 'swiper/css/free-mode';
+@use 'swiper/css/navigation';
+@use 'swiper/css/thumbs';
+
 #root {
   width: 100%;
   margin: 0 auto;
@@ -7,7 +12,7 @@
   font-size: 18px;
   min-height: 100vh;
   display: flex;
-  flex-direction:  column;
+  flex-direction: column;
 }
 
 .logo {
@@ -16,9 +21,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -27,6 +34,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

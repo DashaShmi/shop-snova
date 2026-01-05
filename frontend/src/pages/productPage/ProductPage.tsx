@@ -5,14 +5,9 @@ import { useState } from "react";
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 import { useNavigate } from 'react-router-dom';
 
-import 'swiper/css';
-import 'swiper/css/free-mode';
-import 'swiper/css/navigation';
-import 'swiper/css/thumbs';
-
 import styles from "./ProductPage.module.scss";
-import { useAppDispatch, useAppSelector } from "../../services/store";
-import { addProduct, getOrder } from "../../services/slices/OrderSlice";
+import { useAppDispatch } from "../../services/store";
+import { addProduct } from "../../services/slices/OrderSlice";
 
 
 type ProductParams = {
@@ -62,7 +57,7 @@ export default function ProductPage() {
               style={{
                 '--swiper-navigation-color': '#fff',
                 '--swiper-pagination-color': '#fff',
-              }}
+              } as React.CSSProperties}
               loop={true}
               spaceBetween={10}
               navigation={true}
