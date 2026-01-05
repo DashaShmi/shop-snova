@@ -17,16 +17,15 @@ export async function sendEmail(htmlContent: string) {
     },
     body: JSON.stringify({
       sender: {
-        name: "Dasha ne Brevno",
+        name: "SNOVA",
         email: "ishmizh@gmail.com",
       },
       to: [
         {
           email: "ishmizh@gmail.com",
-          name: "Fonte",
         },
       ],
-      subject: "Hello from Brevno!",
+      subject: "New order on SNOVA",
       htmlContent: htmlContent,
     }),
   });
@@ -34,21 +33,23 @@ export async function sendEmail(htmlContent: string) {
   console.log(data);
 }
 
-
-
 export function createEmailBody(ids: string[]): string {
   let mail_text = "";
 
-  mail_text += "Даша, привет!\n";
-  mail_text += "Новый заказ на сайте!\n";
+  mail_text += "<h2>Даша, привет!</h2>";
+  mail_text += "<p>Новый заказ на сайте!</p>";
 
   const orderedProducts = ids
     .map(id => ALL_PRODUCTS_BACKEND.find(p => p.id === id))
     .filter(Boolean); // убираем undefined
 
+  mail_text += "<ul>";
+
   orderedProducts.forEach(product => {
-    mail_text += `* ${product!.name}\n`;
+    mail_text += `<li>${product!.name}</li>`;
   });
+
+  mail_text += "</ul>";
 
   console.log(mail_text);
 

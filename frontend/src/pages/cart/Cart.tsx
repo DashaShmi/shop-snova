@@ -10,7 +10,7 @@ interface CreateOrderData {
   productIds: string[];
 }
 
-async function createOrder(data: CreateOrderData) {
+async function createOrder(data: CreateOrderData): Promise<boolean> {
   try {
     const response = await fetch("https://functions.yandexcloud.net/d4eshnc1lmhtg9cngcsn", {
       method: 'POST',
@@ -22,14 +22,16 @@ async function createOrder(data: CreateOrderData) {
 
     // Check if the request was successful (fetch only rejects on network errors, not HTTP errors)
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      console.error(`HTTP error! status: ${response.status}`, response);
+      return false;
     }
 
     const responseData = await response.json(); // Parse the JSON response
     console.log('Success:', responseData);
-    return responseData;
+    return true;
   } catch (error) {
     console.error('Error:', error);
+    return false;
   }
 }
 
@@ -74,7 +76,14 @@ export default function Cart() {
 
     console.log("Никнейм:", telegram);
 
-    await createOrder({ telegram, productIds: cart.map(x => x.id) })
+    const successfulySendEmail = await createOrder({ telegram, productIds: cart.map(x => x.id) })
+
+    if (successfulySendEmail) {
+      // показываем что отправлено сообщение
+    } else {
+      alert('ошибка');
+      // показываем ошибку, что не вышло отправить
+    }
   };
 
   function handleDelete(product: IProduct) {
