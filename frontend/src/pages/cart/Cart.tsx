@@ -5,6 +5,33 @@ import { deleteProduct } from "../../services/slices/OrderSlice"
 import type { IProduct } from "../data/ALL_PRODUCTS";
 import { useEffect, useState } from "react";
 
+interface CreateOrderData {
+  telegram: string;
+  productIds: string[];
+}
+
+async function createOrder(data: CreateOrderData) {
+  try {
+    const response = await fetch("https://functions.yandexcloud.net/d4eshnc1lmhtg9cngcsn", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
+
+    // Check if the request was successful (fetch only rejects on network errors, not HTTP errors)
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const responseData = await response.json(); // Parse the JSON response
+    console.log('Success:', responseData);
+    return responseData;
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
 
 
 export default function Cart() {
@@ -34,7 +61,7 @@ export default function Cart() {
     checkForm()
   }, [telegram]);
 
-  const submitHandler = (e: React.FormEvent) => {
+  const submitHandler = async (e: React.FormEvent) => {
     e.preventDefault();                // не даем странице перезагружаться. 
 
     setFormTouched(true);
@@ -46,6 +73,8 @@ export default function Cart() {
     }
 
     console.log("Никнейм:", telegram);
+
+    await createOrder({ telegram, productIds: cart.map(x => x.id) })
   };
 
   function handleDelete(product: IProduct) {

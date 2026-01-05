@@ -1,71 +1,34 @@
-import { ALL_PRODUCTS_BACKEND } from "./ALL_PRODUCTS_BACKEND";
+import { createEmailBody, sendEmail } from "./utils";
 
-console.log('Ты вонючка?')
-
-const brevoApiKey = process.env.BREVO_API_KEY ?? "";
-
-if (brevoApiKey.length === 0) {
-  console.error("BREVO_API_KEY не указан");
-  process.exit(1);
+interface CreateOrderData {
+  telegram: string;
+  productIds: string[];
 }
 
-console.log("brevo api key: " + brevoApiKey)
+module.exports.handler = async function (body: any, context: any) {
+  const httpMethod = body.httpMethod;
 
-// const response = await fetch("https://api.brevo.com/v3/smtp/email", {
-//   method: "POST",
-//   headers: {
-//     "accept": "application/json",
-//     "content-type": "application/json",
-//     "api-key": brevoApiKey
-//   },
-//   body: JSON.stringify({
-//     sender: {
-//       name: "Dasha ne Brevno",
-//       email: "ishmizh@gmail.com",
-//     },
-//     to: [
-//       {
-//         email: "ishmizh@gmail.com",
-//         name: "Fonte",
-//       },
-//     ],
-//     subject: "Hello from Brevno!",
-//     htmlContent: `
-//     <html>
-//       <body>
-//         <p>Hello,</p>
-//         <p>This is my first transactional email sent from Brevo.</p>
-//       </body>
-//     </html>
-//   `,
-//   }),
-// });
+  if (httpMethod === "OPTIONS") {
+    return {
+      statusCode: 204,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "POST, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type"
+      }
+    };
+  }
 
-// const data = await response.json();
-// console.log(data);
+  console.log("context", context);
 
+  const payload: CreateOrderData = context.getPayload();
+  const result = { text: "данные реквеста", payload };
 
+  const text = createEmailBody(payload.productIds);
+  sendEmail(text)
 
-async function sendEmail(ids: string[]) {
-
-  let mail_text = "";
-
-  mail_text += "Даша, привет!\n"
-  mail_text += "Новый заказ на сайте!\n"
-
-  const orderedProducts = ids
-    .map(id => ALL_PRODUCTS_BACKEND.find(p => p.id === id))
-    .filter(Boolean); // убираем undefined
-
-  orderedProducts.forEach(product => {
-    mail_text += `* ${product!.name}\n`;
-  });
-
-
-  mail_text += "* ИМЯ_ТОВАРА \n"
-
-
-  console.log(mail_text);
-}
-
-sendEmail(["bifold-wallet", "zippered-wallet"]);
+  return {
+    statusCode: 200,
+    body: JSON.stringify(result)
+  };
+};

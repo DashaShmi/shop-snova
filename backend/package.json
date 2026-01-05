@@ -4,9 +4,9 @@
   "description": "бекенд для SNOVA",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node src/index.ts",
+    "start": "ts-node src/test.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc"
+    "build": "tsc && cd dist && zip -r yandex_dist.zip ./*"
   },
   "author": "Dasha Shmizha",
   "license": "ISC",
