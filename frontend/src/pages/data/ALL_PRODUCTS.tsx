@@ -34,6 +34,7 @@ import carabiner6 from '../../img/carabiner_6.jpg';
 
 import slimCosmeticBag from '../../img/slim-cosmetic-bag.jpg';
 import slimCosmeticBag2 from '../../img/slim-cosmetic-bag_2.jpg';
+import slimCosmeticBag3 from '../../img/slim-cosmetic-bag_3.jpg';
 
 import bigCosmeticBag from '../../img/big-cosmetic-bag.jpg';
 import bigCosmeticBag2 from '../../img/big-cosmetic-bag_2.jpg';
@@ -194,16 +195,16 @@ export const ALL_PRODUCTS: IProduct[] = [
 
   {
     name: "Slim cosmetic bag",
-    price: 100,
-    fulllName: 'With silver.',
+    price: 120,
+    fulllName: 'With ruffle from retired jeans.',
     description:
       <ul>
         <li>Upcycled out of 2-4 plastic bags</li>
         <li>Sustainable</li>
-        <li>Waterproof and durable</li>
+        <li>Using old jeans</li>
         <li>Handcrafted</li>
       </ul>,
-    images: [slimCosmeticBag, slimCosmeticBag2],
+    images: [slimCosmeticBag, slimCosmeticBag2, slimCosmeticBag3],
     category: "makeup-bags",
     id: "slim-cosmetic-bag",
     dimensions: { h: 17, w: 23 }
