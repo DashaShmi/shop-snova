@@ -1,4 +1,4 @@
-import { getOrder } from "../../services/slices/OrderSlice";
+import { cleanCart, getOrder } from "../../services/slices/OrderSlice";
 import { useAppDispatch, useAppSelector } from "../../services/store";
 import styles from "./Cart.module.scss";
 import { deleteProduct } from "../../services/slices/OrderSlice"
@@ -63,8 +63,6 @@ export default function Cart() {
     return true;
   }
 
-
-
   useEffect(() => {
     checkForm()
   }, [telegram]);
@@ -91,10 +89,12 @@ export default function Cart() {
     if (successfulySendEmail) {
       // показываем что отправлено сообщение
       setOrderIsComplete(true)
+      dispatch(cleanCart());
     } else {
       alert('ошибка');
       // показываем ошибку, что не вышло отправить
     }
+
   };
 
   function handleDelete(product: IProduct) {

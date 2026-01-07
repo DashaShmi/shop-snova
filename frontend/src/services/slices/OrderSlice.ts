@@ -28,7 +28,10 @@ export const orderSlice = createSlice({
     deleteProduct: (state, action: PayloadAction<{ id: string }>) => {
       const index = state.products.findIndex((x) => x.id === action.payload.id);
       state.products.splice(index, 1);
+    },
 
+    cleanCart: (state) => {
+      state.products = [];
     }
   },
 })
@@ -39,7 +42,7 @@ export const {
 
 export const {
   addProduct,
-  deleteProduct,
+  deleteProduct, cleanCart
 } = orderSlice.actions;
 
 export const orderReducer = orderSlice.reducer;
