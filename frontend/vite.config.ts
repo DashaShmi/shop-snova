@@ -8,7 +8,7 @@ export default defineConfig(({ mode }) => ({
   build: {
     sourcemap: false
   },
-  base: mode === 'production' ? '/shop-snova/' : '/',
+  base: mode === 'production' ? '/' : '/',
   plugins: [
     vsharp({
       height: 1000, // Maximum width (won't upscale smaller images)
