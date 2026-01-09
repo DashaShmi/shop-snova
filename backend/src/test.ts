@@ -1,8 +1,13 @@
-import { createEmailBody, sendEmail } from "./utils";
+import { CreateOrderData } from "./CreateOrderData";
+import { createAdminEmailBody, sendEmail } from "./utils";
 
 console.log('Ты вонючка?');
 
+const orderData: CreateOrderData = {
+  telegram: "shmizh",
+  email: "ishmizh@gmail.com",
+  productIds: ["bifold-wallet", "zippered-wallet"]
+}
 
-
-const text = createEmailBody(["bifold-wallet", "zippered-wallet"]);
-sendEmail(text)
+const text = createAdminEmailBody(orderData);
+sendEmail(orderData.email, text)

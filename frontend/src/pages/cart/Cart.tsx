@@ -112,8 +112,14 @@ export default function Cart() {
         </div>
       </>}
 
-      {!orderIsComplete && <>
+      {!orderIsComplete && cart.length === 0 && <>
+        <div className={styles.cart}>
+          <h1>Cart</h1>
+          <p style={{ textAlign: 'center' }} className={styles.label}>Cart is empty, go to Shop for purchases</p>
+        </div>
+      </>}
 
+      {!orderIsComplete && cart.length > 0 && <>
         <div className={styles.cart}>
           <h1>Cart</h1>
           {cart.map(product => <div className={styles.productAtCart}>
@@ -121,10 +127,8 @@ export default function Cart() {
             <div className={styles.productName}>{product.name}</div>
             <div className={styles.productPrice}> {product.price} GEL</div>
             <button onClick={() => handleDelete(product)} className={styles.deleteButton}> Х </button>
-
           </div>
           )}
-
           <form onSubmit={submitHandler} method="post">
             <div className={styles.line} />
             <div className={styles.total}>Estimated Total: {totalPrice} GEL</div>

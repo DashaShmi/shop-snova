@@ -1,9 +1,5 @@
-import { createEmailBody, sendEmail } from "./utils";
-
-interface CreateOrderData {
-  telegram: string;
-  productIds: string[];
-}
+import { CreateOrderData } from "./CreateOrderData";
+import { createAdminEmailBody, createClientEmailBody, sendEmail } from "./utils";
 
 module.exports.handler = async function (body: any, context: any) {
   const httpMethod = body.httpMethod;
@@ -21,11 +17,14 @@ module.exports.handler = async function (body: any, context: any) {
 
   console.log("context", context);
 
-  const payload: CreateOrderData = context.getPayload();
-  const result = { text: "данные реквеста", payload };
+  const orderData: CreateOrderData = context.getPayload();
+  const result = { text: "данные реквеста", payload: orderData };
 
-  const text = createEmailBody(payload.productIds);
-  sendEmail(text)
+  const textAdmin = createAdminEmailBody(orderData);
+  const textClient = createClientEmailBody(orderData);
+
+  sendEmail(orderData.email, textClient)
+  sendEmail("ishmizh@gmail.com", textAdmin)
 
   return {
     statusCode: 200,
