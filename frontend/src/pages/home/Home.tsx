@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import "./Home.scss";
 export default function Home() {
   return (<>
@@ -10,7 +12,7 @@ export default function Home() {
             <p>Project about turning plastic waste into sustainable bags & accessories</p>
           </div>
 
-          <a className="home-button" href="/shop">SHOP</a>
+          <Link className="home-button" to="/shop">SHOP</Link>
         </div>
       </div>
 
