@@ -34,6 +34,7 @@
     "sass-embedded": "^1.91.0",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.35.1",
-    "vite": "^7.0.4"
+    "vite": "^5.4.21",
+    "vite-plugin-vsharp": "^1.9.1"
   }
 }
