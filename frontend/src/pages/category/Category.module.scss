@@ -1,8 +1,15 @@
+@use "../../Variables.scss" as *;
+
 .category {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 50px;
   padding: 30px;
+
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .card {
@@ -39,3 +46,7 @@
 //   margin-top: 10px;
 //   margin-bottom: 10px;
 // }
+
+.navLink {
+  // нету
+}

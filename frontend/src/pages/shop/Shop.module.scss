@@ -1,11 +1,18 @@
+@use "../../Variables.scss" as *;
+
 .shop {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 50px;
   padding: 30px;
+
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
-.card{
+.card {
   position: relative;
   aspect-ratio: 10/7;
   border-radius: 15px;
@@ -16,7 +23,7 @@
 
 }
 
-.shop-title{
+.shopTitle {
   position: relative;
   color: white;
 }
@@ -29,5 +36,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
 
+.navLink {
+  // нету
 }

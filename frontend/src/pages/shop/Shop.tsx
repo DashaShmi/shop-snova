@@ -1,19 +1,19 @@
-import "./Shop.css";
+import styles from "./Shop.module.scss"
 import { Link } from "react-router-dom";
 import { ALL_CATEGORIES } from "../data/ALL_CATEGORIES";
 
 export default function Shop() {
 
   return (<>
-    <section className="shop">
+    <section className={styles.shop}>
 
       {ALL_CATEGORIES.map((category) =>
-      (<div key={category.id} className="card">
-        <Link to={`/shop/category/${category.id}`} className="nav-link">
+      (<div key={category.id} className={styles.card}>
+        <Link to={`/shop/category/${category.id}`} className={styles.navLink}>
           <img
             src={category.img}
             alt="картинка Shop" />
-          <h2 className="shop-title">{category.name}</h2>
+          <h2 className={styles.shopTitle}>{category.name}</h2>
         </Link>
       </div>)
       )}

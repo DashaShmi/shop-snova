@@ -23,7 +23,7 @@ export default function Wallets() {
 
       {productInCategory.map((product) =>
       (<div key={product.id}>
-        <Link to={`/shop/product/${product.id}`} className="nav-link">
+        <Link to={`/shop/product/${product.id}`} className={styles.navLink}>
           <div className={styles.card}>
             <img
               src={product.images[0]}

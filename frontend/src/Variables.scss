@@ -1,0 +1,7 @@
+$mobileScreenMaxSize: 767px;
+
+@mixin mobile {
+  @media (max-width:$mobileScreenMaxSize) {
+    @content;
+  }
+}

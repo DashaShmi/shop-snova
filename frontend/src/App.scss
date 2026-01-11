@@ -1,3 +1,5 @@
+@use "./Variables.scss" as *;
+
 @use 'swiper/css';
 @use 'swiper/css/free-mode';
 @use 'swiper/css/navigation';
@@ -13,6 +15,10 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+
+  @include mobile {
+    padding: 0;
+  }
 }
 
 .logo {

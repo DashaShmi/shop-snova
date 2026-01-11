@@ -1,12 +1,12 @@
 import imgUrl from '../../img/MIT05023.jpg';
-import "./About.css";
+import styles from "./About.module.scss";
 
 export default function About() {
   return (<>
     <section className="about">
       {/* Текстовая часть */}
-      <div className="wrap">
-        <div className="about-text item">
+      <div className={styles.wrap}>
+        <div className={`${styles.aboutText} ${styles.wrapItem}`}>
           <h1>About</h1>
           <p>
             Hi everyone! My name is Dasha, creator of SNOVA. I dance to jazz, ride
@@ -31,14 +31,14 @@ export default function About() {
             myself.
           </p>
 
-          <p className='about-quote'>
+          <p className={styles.aboutQuote}>
             Creativity is my dialogue with the world. I like to add value to trash.
           </p>
 
         </div>
 
         {/* Фото */}
-        <div className='about-image item'>
+        <div className={`${styles.aboutImage} ${styles.item}`}>
           <img
             src={imgUrl}
             alt="картинка About" />
