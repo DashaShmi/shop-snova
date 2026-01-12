@@ -7,7 +7,7 @@ export default function About() {
       {/* Текстовая часть */}
       <div className={styles.wrap}>
         <div className={`${styles.aboutText} ${styles.wrapItem}`}>
-          <h1>About</h1>
+          <h1 className={styles.aboutTitle}>About</h1>
           <p>
             Hi everyone! My name is Dasha, creator of SNOVA. I dance to jazz, ride
             my bike, go hiking and swim. SNOVA – is my project about turning plastic

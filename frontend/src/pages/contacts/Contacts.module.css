@@ -1,13 +1,12 @@
-@use "../../Variables.scss" as *;
-
 .contacts {
   text-align: center;
   padding: 2rem 1rem;
   flex: 1;
   display: flex;
   flex-direction: column;
-
-  @include mobile {
+}
+@media (max-width: 767px) {
+  .contacts {
     padding: 4rem 1rem;
   }
 }
@@ -43,4 +42,4 @@
 
 .divider {
   flex: 1;
-}
+}/*# sourceMappingURL=Contacts.module.css.map */

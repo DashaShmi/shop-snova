@@ -5,7 +5,7 @@ import Cart from "./pages/cart/Cart"
 import About from "./pages/about/About"
 import Navbar from "./pages/components/Navbar"
 import Contacts from "./pages/contacts/Contacts"
-import Categoriy from "./pages/category/Category"
+import Categoriy from "./pages/categoryPage/CategoryPage"
 import ProductPage from "./pages/productPage/ProductPage"
 import './App.scss'
 
@@ -27,7 +27,6 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/contact" element={<Contacts />} />
           <Route path="/about" element={<About />} />
-
 
           <Route path="/shop">
             <Route index element={<Shop />} />

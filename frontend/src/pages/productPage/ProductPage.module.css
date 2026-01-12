@@ -1,5 +1,3 @@
-@use "../../Variables.scss" as *;
-
 .productPage {
   padding: 30px;
   text-align: left;
@@ -9,8 +7,9 @@
 .page {
   display: flex;
   gap: 50px;
-
-  @include mobile {
+}
+@media (max-width: 767px) {
+  .page {
     flex-direction: column;
     gap: 15px;
   }
@@ -19,12 +18,13 @@
 .preview {
   overflow: hidden;
   flex: 1;
-  user-select: none;
-
-  img {
-    display: block;
-    width: 100%;
-  }
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.preview img {
+  display: block;
+  width: 100%;
 }
 
 .info {
@@ -48,7 +48,8 @@
 
 .mySwiper2 img {
   aspect-ratio: 4/5;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .mySwiper {
@@ -58,23 +59,14 @@
 
 .mySwiper img {
   aspect-ratio: 4/6;
-  object-fit: cover;
-}
-
-.mySwiper .swiper-slide {
-  // height: 100%;
-  // opacity: 0.4;
-}
-
-.mySwiper .swiper-slide-thumb-active {
-  // opacity: 1;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .swiper-slide img {
   display: block;
-  // width: 100%;
-  // height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .buttonBuy {
@@ -89,4 +81,4 @@
 .dimensions {
   font-size: 17px;
   font-style: italic;
-}
+}/*# sourceMappingURL=ProductPage.module.css.map */

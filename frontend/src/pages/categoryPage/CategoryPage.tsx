@@ -1,4 +1,5 @@
-import styles from "./Category.module.scss";
+import styles from "./CategoryPage.module.scss";
+
 import { Link, useParams } from "react-router-dom";
 import { ALL_CATEGORIES } from "../data/ALL_CATEGORIES";
 import { ALL_PRODUCTS } from "../data/ALL_PRODUCTS";
@@ -8,7 +9,7 @@ type CategoryParams = {
 };
 
 
-export default function Wallets() {
+export default function CategoryPage() {
 
   const { categoryId } = useParams<CategoryParams>();
 
@@ -17,8 +18,8 @@ export default function Wallets() {
   const productInCategory = ALL_PRODUCTS.filter((elem) => elem.category === categoryId)
 
   return (<>
-    <h2 className={styles.categoryTitle}>{category?.name}</h2>
-    <p className={styles.categoryTitle}>{category?.description}</p>
+    <h1 className={styles.categoryTitle}>{category?.name}</h1>
+    <p>{category?.description}</p>
     <section className={styles.category}>
 
       {productInCategory.map((product) =>
