@@ -1,9 +1,6 @@
-@use "../../Variables.scss" as *;
-
 .cartContainer {
   display: flex;
   justify-content: center;
-
 }
 
 .cart {
@@ -12,8 +9,9 @@
   gap: 30px;
   padding: 10px;
   width: 500px;
-
-  @include mobile {
+}
+@media (max-width: 767px) {
+  .cart {
     padding: 25px;
   }
 }
@@ -25,13 +23,13 @@
 .productAtCart {
   display: flex;
   align-items: center;
-
-  img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    display: block;
-  }
+}
+.productAtCart img {
+  width: 100px;
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
 }
 
 .productName {
@@ -41,7 +39,6 @@
 .productPrice {
   padding: 10px;
 }
-
 
 .inputField {
   width: 100%;
@@ -83,7 +80,7 @@
 }
 
 .orderButton {
-  padding: 10px 46px
+  padding: 10px 46px;
 }
 
 .deleteButton:hover {
@@ -95,5 +92,6 @@
 }
 
 .cartHeader {
-  @include header1;
-}
+  font-size: 50px;
+  margin: 20px 0 0;
+}/*# sourceMappingURL=Cart.module.css.map */

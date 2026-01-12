@@ -121,7 +121,7 @@ export default function Cart() {
 
       {!orderIsComplete && cart.length > 0 && <>
         <div className={styles.cart}>
-          <h1>Cart</h1>
+          <h1 className={styles.cartHeader}>Cart</h1>
           {cart.map(product => <div className={styles.productAtCart}>
             <img src={product.images[0]} />
             <div className={styles.productName}>{product.name}</div>
