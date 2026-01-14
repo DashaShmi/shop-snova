@@ -54,6 +54,11 @@
 .mySwiper {
   box-sizing: border-box;
   padding: 10px 0;
+
+  @include mobile {
+    margin-top: 10px;
+
+  }
 }
 
 .mySwiper img {
