@@ -16,7 +16,7 @@
   @include mobile {
     padding: 10px;
     flex-direction: column;
-    row-gap: 17px;
+    row-gap: 15px;
   }
 }
 
@@ -24,7 +24,7 @@
 .navRight {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.2rem;
 
   @include mobile {
     justify-content: center;

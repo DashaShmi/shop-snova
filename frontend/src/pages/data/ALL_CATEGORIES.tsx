@@ -23,7 +23,7 @@ export const ALL_CATEGORIES: ICategories[] = [
   {
     name: "Bags",
     id: "bags",
-    description: 'Bags from plastic bags',
+    description: 'Handbag from plastic bags',
     img: silverBag
   },
   {
@@ -36,7 +36,7 @@ export const ALL_CATEGORIES: ICategories[] = [
   {
     name: "Makeup bags",
     id: "makeup-bags",
-    description: 'Passport covers from plastic bags',
+    description: 'Bathroom bags made of recycled plastic',
     img: carabiner5
   },
 ];

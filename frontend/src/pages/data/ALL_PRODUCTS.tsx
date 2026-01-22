@@ -212,7 +212,7 @@ export const ALL_PRODUCTS: IProduct[] = [
   },
 
   {
-    name: "Сarbine bag",
+    name: "Сarabiner bag",
     price: 120,
     fulllName: 'Made of recycled packing pets feed or coffee beans',
     description:
