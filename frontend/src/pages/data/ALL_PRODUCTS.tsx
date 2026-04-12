@@ -24,6 +24,11 @@ import ropeBag4 from '../../img/ropeBag_4.jpg';
 import ropeBag5 from '../../img/ropeBag_5.jpg';
 import ropeBag6 from '../../img/ropeBag_6.jpg';
 
+import largeBag from '../../img/largeBag.jpg';
+import largeBag2 from '../../img/largeBag_2.jpg';
+import largeBag3 from '../../img/largeBag_3.jpg';
+import largeBag4 from '../../img/largeBag_4.jpg';
+
 import carabiner from '../../img/carabiner.jpg';
 import carabiner2 from '../../img/carabiner_2.jpg';
 import carabiner3 from '../../img/carabiner_3.jpg';
@@ -231,7 +236,7 @@ export const ALL_PRODUCTS: IProduct[] = [
   {
     name: "Bag",
     price: 280,
-    fulllName: 'Bag of animal feed package and old jeans',
+    fulllName: 'Bag of pets feed package and old jeans',
     description:
       <ul>
         <li>Upcycled materials</li>
@@ -260,5 +265,22 @@ export const ALL_PRODUCTS: IProduct[] = [
     category: "bags",
     id: "rope-bag",
     dimensions: { h: 24, w: 27, d: 6 },
+  },
+
+  {
+    name: "Large bag",
+    price: 160,
+    fulllName: 'Bag of pets feed package',
+    description:
+      <ul>
+        <li>Upcycled materials</li>
+        <li>Sustainable</li>
+        <li>Waterproof and durable</li>
+        <li>Handcrafted</li>
+      </ul>,
+    images: [largeBag, largeBag2, largeBag3, largeBag4],
+    category: "bags",
+    id: "large-bag",
+    dimensions: { h: 60, w: 35, d: 9 },
   },
 ];
