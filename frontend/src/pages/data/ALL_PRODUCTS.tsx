@@ -27,7 +27,6 @@ import ropeBag6 from '../../img/ropeBag_6.jpg';
 import largeBag from '../../img/largeBag.jpg';
 import largeBag2 from '../../img/largeBag_2.jpg';
 import largeBag3 from '../../img/largeBag_3.jpg';
-import largeBag4 from '../../img/largeBag_4.jpg';
 
 import carabiner from '../../img/carabiner.jpg';
 import carabiner2 from '../../img/carabiner_2.jpg';
@@ -278,7 +277,7 @@ export const ALL_PRODUCTS: IProduct[] = [
         <li>Waterproof and durable</li>
         <li>Handcrafted</li>
       </ul>,
-    images: [largeBag, largeBag2, largeBag3, largeBag4],
+    images: [largeBag, largeBag2, largeBag3],
     category: "bags",
     id: "large-bag",
     dimensions: { h: 60, w: 35, d: 9 },
