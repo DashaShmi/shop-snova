@@ -17,6 +17,7 @@ type ProductParams = {
 export default function ProductPage() {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
+  // useParams() — это хук отпределяет id из URL. Он читает динамические параметры текущего маршрута.
   const { productId } = useParams<ProductParams>();
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperClass | null>(null);
 
@@ -71,7 +72,7 @@ export default function ProductPage() {
                   <SwiperSlide>
                     <img
                       src={img}
-                      alt="картинка Wallets" />
+                      alt={product.name} />
                   </SwiperSlide>
                 ))
               }

@@ -105,4 +105,13 @@ export const ALL_PRODUCTS_BACKEND: IBackendProduct[] = [
     id: "rope-bag",
     dimensions: { h: 24, w: 27, d: 6 },
   },
+
+  {
+    name: "Large bag",
+    price: 160,
+    fulllName: 'Bag of pets feed package',
+    category: "bags",
+    id: "large-bag",
+    dimensions: { h: 60, w: 35, d: 9 },
+  },
 ];

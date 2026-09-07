@@ -44,7 +44,6 @@ export default function Cart() {
   const [error, setError] = useState("");
   const [email, setEmail] = useState("");
   const [orderIsComplete, setOrderIsComplete] = useState(false)
-
   const [formTouched, setFormTouched] = useState(false);
 
   const totalPrice = cart.reduce((sum, product) => {
@@ -62,10 +61,6 @@ export default function Cart() {
 
     return true;
   }
-
-  useEffect(() => {
-    checkForm()
-  }, [telegram]);
 
   useEffect(() => {
     checkForm()
