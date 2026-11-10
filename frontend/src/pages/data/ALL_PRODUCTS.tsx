@@ -6,12 +6,9 @@ import bifoldWallet3 from '../../img/bifold-wallet_3.jpg';
 import bifoldWallet4 from '../../img/bifold-wallet_4.jpg';
 import bifoldWallet5 from '../../img/bifold-wallet_5.jpg';
 
-
 import docholder from '../../img/docholder.jpg';
-import docholder2 from '../../img/docholder_2.jpg';
-import docholder3 from '../../img/docholder_3.jpg';
-import docholder4 from '../../img/docholder_4.jpg';
-
+import docholder2 from '../../img/docholder_2.png';
+import docholder3 from '../../img/docholder_3.png';
 
 import silverBag from '../../img/silver-bag.jpg';
 import silverBag2 from '../../img/silver-bag_2.jpg';
@@ -59,11 +56,7 @@ import cardholder from '../../img/cardholder.jpg';
 import cardholder2 from '../../img/cardholder_2.jpg';
 import cardholder3 from '../../img/cardholder_3.jpg';
 import cardholder4 from '../../img/cardholder_4.jpg';
-
-import surprise from '../../img/surprise.jpg';
-import surprise2 from '../../img/surprise_2.jpg';
-import surprise3 from '../../img/surprise_3.jpg';
-import surprise4 from '../../img/surprise_4.jpg';
+import cardholder5 from '../../img/cardholder_5.png';
 
 
 export interface IProduct {
@@ -123,10 +116,10 @@ export const ALL_PRODUCTS: IProduct[] = [
         <li>Sustainable</li>
         <li>Waterproof and durable</li>
       </ul>,
-    images: [cardholder, cardholder2, cardholder3, cardholder4],
+    images: [cardholder, cardholder2, cardholder3, cardholder4, cardholder5],
     category: "wallets",
     id: "cardholder",
-    dimensions: { h: 8, w: 10 }
+    dimensions: { h: 7, w: 10 }
   },
 
   {
@@ -141,7 +134,7 @@ export const ALL_PRODUCTS: IProduct[] = [
         <li>Sustainable</li>
         <li>Waterproof and durable</li>
       </ul>,
-    images: [docholder, docholder2, docholder3, docholder4],
+    images: [docholder, docholder2, docholder3],
     category: "passport-covers",
     id: "docholder",
     dimensions: { h: 15, w: 11 }
@@ -164,22 +157,6 @@ export const ALL_PRODUCTS: IProduct[] = [
     dimensions: { h: 14, w: 10 }
   },
 
-  {
-    name: "🔥Сrazy cover - surprise🔥",
-    price: 60,
-    fulllName: 'for 1 passport',
-    description:
-      <ul>
-        <li>If you’re a fan of wild, chaotic prints — this one’s for you</li>
-        <li>You won’t know which pattern you’ll get until it arrives. That’s the fun part</li>
-        <li>A bizarre, bold, beautifully upcycled piece that’s impossible to predict</li>
-        <li>Sustainable</li>
-      </ul>,
-    images: [surprise, surprise2, surprise3, surprise4],
-    category: "passport-covers",
-    id: "passport-cover-surprise",
-    dimensions: { h: 14, w: 10 }
-  },
   {
     name: "Big cosmetic bag",
     price: 120,
