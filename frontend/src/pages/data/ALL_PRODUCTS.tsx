@@ -21,6 +21,10 @@ import ropeBag4 from '../../img/ropeBag_4.jpg';
 import ropeBag5 from '../../img/ropeBag_5.jpg';
 import ropeBag6 from '../../img/ropeBag_6.jpg';
 
+import phoneBag from '../../img/phone-bag.jpg'
+import phoneBag2 from '../../img/phone-bag_2.jpg'
+import phoneBag3 from '../../img/phone-bag_3.jpg'
+
 import largeBag from '../../img/largeBag.jpg';
 import largeBag2 from '../../img/largeBag_2.jpg';
 import largeBag3 from '../../img/largeBag_3.jpg';
@@ -241,6 +245,23 @@ export const ALL_PRODUCTS: IProduct[] = [
     category: "bags",
     id: "rope-bag",
     dimensions: { h: 24, w: 27, d: 6 },
+  },
+
+  {
+    name: "Phone bag",
+    price: 160,
+    fulllName: 'Bag for phone with silly charm',
+    description:
+      <ul>
+        <li>Upcycled materials</li>
+        <li>Sustainable</li>
+        <li>Waterproof and durable</li>
+        <li>Handcrafted</li>
+      </ul>,
+    images: [phoneBag, phoneBag2, phoneBag3],
+    category: "bags",
+    id: "phone-bag",
+    dimensions: { h: 19, w: 13 },
   },
 
   {
